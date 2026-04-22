@@ -1,0 +1,82 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+.env.local
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# macOS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Docker
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+
+# Generated log files
+system_metrics.log
+*.log
+
+# Ollama models (if stored locally)
+.ollama/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+*.cover
+nosetests.xml
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Build artifacts
+dist/
+*.whl
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,48 @@
+services:
+  telemetry:
+    build:
+      context: ./src/telemetry
+      dockerfile: Dockerfile
+    container_name: aero-telemetry
+    volumes:
+      - metrics-data:/app/data
+    networks:
+      - aero-network
+    restart: unless-stopped
+
+  agent:
+    build:
+      context: ./src/agent
+      dockerfile: Dockerfile
+    container_name: aero-agent
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - LOG_FILE_PATH=/app/data/system_metrics.log
+    volumes:
+      - metrics-data:/app/data
+    networks:
+      - aero-network
+    depends_on:
+      - telemetry
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: aero-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - aero-network
+    restart: unless-stopped
+
+networks:
+  aero-network:
+    driver: bridge
+
+volumes:
+  metrics-data:
+  ollama-data:
