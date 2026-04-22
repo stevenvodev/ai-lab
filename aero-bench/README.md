@@ -1,4 +1,4 @@
-# Aero-Bench - Local AI Root Cause Analysis POC
+# Aero-Bench - AI Root Cause Analysis
 
 A 100% local, end-to-end AI Proof of Concept focusing on automated Root Cause Analysis (RCA) of live system metrics and logs.
 
